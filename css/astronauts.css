@@ -238,6 +238,7 @@ border: 3px solid #FFF;
 .fon_button {
   position: absolute;
   bottom: 0;
+  left: 0;
   width: 100%;
   z-index: -1;
 }
