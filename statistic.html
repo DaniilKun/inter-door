@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/open_space.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/video_archiv.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container_descript">
+      <div class="title">
+        Выход в открытый <br />
+        космос
+      </div>
+      <div class="container_img_prev" id="fade-out-element">
+        <div class="hidden_img_prev">
+          <div class="imgs_prev" style="height: 215px">
+            <img src="./img/open_space/three/1.png" alt="" />
+            <img src="./img/open_space/three/2.png" alt="" />
+            <img src="./img/open_space/three/3.jpg" alt="" style="width: 327px;height: 215px;border-radius: 10px;
+            border: 2px solid #FFF;"/>
+            <div class="videoV">
+              <img src="./img/play.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Контент с описанием -->
+      <div class="descript_txt">
+        <div class="circle1"></div>
+        <div class="line"></div>
+        <div class="circle2"></div>
+
+        <div class="conteiner_biography" id="fade-out-element">
+          <div class="scroll"></div>
+          <div class="txt">
+            <br />
+            <br />
+
+            <h3>
+              Муса Манаров стал 63-м по счету отечественным космонавтом оказавшимся в космосе. Но
+              кроме того он является первым космонавтов- лакцем в мире. В его личном послужном
+              списке два полета на орбиту, общей продолжительностью
+              <b>541 сутки 0 часов 31 минута 10 секунд.</b>
+              корабль.
+            </h3>
+            <br />
+
+            <br />
+            <h3>
+              <b>Первый полет</b> Манарова (21 декабря 1987 – 21 декабря 1988 г.) в составе основной
+              экспедиции продлился <b>365 суток 22 часа 39 минут 47 сек.</b> , побив мировой рекорд.
+              За это достижение Муса Манаров и Владимир Титов были удостоены попадания в Книгу
+              рекордов Гиннесса за самый продолжительный полет на тот момент. <br /><br />
+              Во время полета Манаров выполнил 3 выхода в открытый космос: <br /><br />
+              <b>26.02.1988 г.</b> – продолжительность 4 часа 25 минут<br />
+              <b>30.06.1988 г.</b> – продолжительность 5 часов 10 минут<br />
+              <b>20.10.1988 г.</b> – продолжительность 4 часа 12 минут<br />
+            </h3>
+            <div class="img_content">
+              <img
+                src="./img/open_space/three/full/1.jpeg"
+                alt=""
+                style="width: 258px; height: 356px; border-radius: 10px; border: 2px solid #fff"
+              />
+            </div>
+            <br /><br />
+            <h3>
+              <b>Второй полет</b> (2 декабря 1990 – 26 мая 1991 г.) занял уже<b>175 суток 1 час 51 минуту 23
+              сек.</b> <br><br>
+              Во время полета выполнил 4 выхода: <br><br>
+              <b>07.01.1991 г.</b> – продолжительность 5 часов 18 минут<br>
+              <b>23.01.1991 г.</b> – продолжительность 5 часов 33 минуты<br>
+              <b>26.01.1991 г.</b> – продолжительность 6 часов 20 минут (наиболее
+              продолжительный) <br>
+              <b>25.04.1991 г.</b> – продолжительность 3 часа 34 минуты <br><br>
+              В ходе двух экспедиций Манаров совершил <b>7 выходов</b> в открытый
+космос. Три в первую и четыре во вторую экспедицию. Суммарное
+количество часов работы в открытом космосе составило <b>34 часа 23 минуты.</b>
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container_button">
+      <div class="btn__title">
+        <a class="popo" href="./open_space.html"
+          ><button class="oneBtn" id="btn_title">Как это происходит</button></a
+        >
+        <a class="popo" href="./history_Musa.html"
+          ><button class="twoBtn " id="btn_title ">История Мусы Манарова</button></a
+        >
+        <a class="popo" href="./statistic.html"
+          ><button class="threeBtn active_btn" id="btn_title">Статистика и достижения</button></a
+        >
+      </div>
+      <a href="./index.html" class="popo">
+        <form action="./index.html">
+          <button class="back"></button></form
+      ></a>
+      <a href="./index.html" class="popo">
+        <img class="home" src="./img/home.png" alt="" />
+      </a>
+      <div class="fon_button">
+        <img src="img/planet_fon.png" alt="" />
+      </div>
+    </div>
+
+    <script src="/js/btn_active.js"></script>
+    <script src="./js/clickBtnArrows.js"></script>
+    <script>
+      // Связка сладеров
+      const images = document.querySelectorAll('.imgs_prev img');
+      for (const [i, image] of Object.entries(images)) {
+        image.dataset.id = i;
+        image.addEventListener('click', () => {
+          localStorage.setItem('SLIDE_ID', image.dataset.id);
+          window.location.href = './statisticSlider.html';
+          console.log(images);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.popo'); // Выбираем все кнопки с классом 'popo'
+
+        // Добавляем обработчик событий для каждой кнопки
+        buttons.forEach(function (button) {
+          button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const fadeOutElements = document.querySelectorAll('#fade-out-element');
+            for (const OutElement of fadeOutElements) {
+              OutElement.classList.add('fade-out-animation');
+            }
+
+            const targetPage = button.getAttribute('href'); // Получаем значение атрибута 'href' кнопки
+            setTimeout(function () {
+              window.location.href = targetPage; // Переходим на страницу, указанную в 'href'
+            }, 500);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

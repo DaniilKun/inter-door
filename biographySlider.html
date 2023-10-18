@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/slider.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    
+    <title>menu</title>
+  </head>
+
+  <body id="fade-out-element">
+    <section class="animation_shadow">
+    <div class="container_descript">
+      <div class="container_img_manarov">
+        <div class="fon_toner">
+          <img src="./img/fon_toner.png" alt="" />
+        </div>
+        <div class="name">
+          <h1>
+            Муса <br />
+            Манаров
+          </h1>
+        </div>
+      </div>
+      <!-- Контент с описанием -->
+      <div class="descript_txt">
+        <div class="circle"></div>
+        <div class="line"></div>
+        <div>
+          <h2>
+            Лётчик-космонавт СССР, полковник запаса, Герой Советского Союза. Заслуженный мастер
+            спорта СССР.
+          </h2>
+        </div>
+        <div class="conteiner_biography" id="fade-out-element">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="./img/Musa_biography/img1.png" id="1" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/Musa_biography/img2.png" id="2" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/Musa_biography/img3-1.png" id="3" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/Musa_biography/img3-2.png" id="4" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/Musa_biography/img4-1.png" id="5" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/Musa_biography/img4-2.png" id="6" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/Musa_biography/img4-3.png" id="7" />
+              </div>
+              <div class="swiper-slide">
+                <img src="./img/Musa_biography/img5.png" id="8" />
+              </div>
+            </div>
+          </div>
+          <div class="next"></div>
+          <div class="prev"></div>
+          <!-- <form action="./biography.html">
+          <button class="btnInBiography"></button>
+          </form> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container_button">
+      <div class="btn__title">
+        <a href="./biography.html"><button id="btn_title" class="active_btn">Биография</button></a>
+        <a class="popo" href="./awards.html"><button id="btn_title">Награды</button></a>
+        <a href="./video_archiv.html"><button id="btn_title">Видеоархив</button></a>
+        <a href="./path_stars.html"><button id="btn_title">Путь к звёздам</button></a>
+      </div>
+      <a href="./biography.html" class="popo">
+      <form action="./biography.html">
+        <button class="back"></button>
+      </form></a>
+      <a href="./index.html" class="popo">
+        <img class="home" src="./img/home.png" alt="" />
+      </a>
+      <div class="fon_button">
+        <video id="video-background" autoplay loop muted>
+          <source src="./img/fon.mp4" type="video/mp4">
+
+        </video>
+      </div>
+    </div>
+  </section>
+
+    <script src="./js/swiper.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="./js/btn_active.js"></script>
+    <script>
+      
+
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('.popo').addEventListener('click', function (event) {
+          event.preventDefault();
+          const fadeOutElement = document.getElementById('fade-out-element');
+          fadeOutElement.classList.add('fade-out-animation');
+
+          setTimeout(function () {
+            window.location.href = 'awards.html';
+          }, 500); // Время анимации теперь 2 секунды
+        });
+      });
+    </script>
+    
+
+  </body>
+</html>

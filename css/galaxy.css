@@ -1,0 +1,10 @@
+#btn_title{
+  width: 448px;
+  padding: 0 20px;
+}
+.imgs_prev img{
+  width: 327px;
+height: 215px;
+border-radius: 10px;
+border: 2px solid #FFF;
+}

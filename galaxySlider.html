@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/sliderOpenSpace.css" />
+    <link rel="stylesheet" href="css/open_spaceSlider.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/video_archiv.css" />
+    <link rel="stylesheet" href="./css/galaxy.css">
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container_descript">
+      <div class="title">
+        <br />Галактика
+      </div>
+      <div class="circle1"></div>
+      <div class="line"></div>
+      <div class="circle2"></div>
+      <div class="container_img_prev" id="fade-out-element">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/one/imgPrevAndFull/1.png"
+                id="1"
+                style="width: 99%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Млечный путь.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/one/imgPrevAndFull/2.jpeg"
+                id="2"
+                style="width: 70%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Модель Солнечной системы - схема.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/one/imgPrevAndFull/3.jpeg"
+                id="3"
+                style="width: 99%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Модель Солнечной системы.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/one/imgPrevAndFull/4.png"
+                id="4"
+                style="width: 97%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Общая структура Вселенной.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/one/imgPrevAndFull/5.jpeg"
+                id="5"
+                style="width: 99%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Скопления галактик.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/one/imgPrevAndFull/6.png"
+                id="6"
+                style="width: 66%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">
+                Планета Земля.
+              </h2>
+            </div>
+            
+          </div>
+        </div>
+        <div class="next"></div>
+        <div class="prev"></div>
+        <!-- <a href="./open_space.html" class="popo">
+          <button class="btnForBack">
+            <img src="./img/Musa_biography/Arrow.png" alt="" />
+            <h2>Назад</h2>
+          </button>
+        </a> -->
+      </div>
+    </div>
+
+    <div class="container_button">
+      <div class="btn__title">
+        <a class="popo" href="./galaxy.html"
+          ><button id="btn_title" class="active_btn">Из чего состоит</button></a
+        >
+        <a class="popo" href="./varieties.html"><button id="btn_title">Разновидности</button></a>
+        <a class="popo" href="./whatIs.html"
+          ><button id="btn_title">Что в них <br />происходит</button></a
+        >
+        <a class="popo" href="./milkyWay.html"><button id="btn_title">Млечный путь</button></a>
+      </div>
+      <a href="./galaxy.html" class="popo">
+        <form action="./galaxy.html">
+          <button class="back"></button></form
+      ></a>
+      <a href="./index.html" class="popo">
+        <img class="home" src="./img/home.png" alt="" />
+      </a>
+      <div class="fon_button">
+        <img src="img/planet_fon.png" alt="" />
+      </div>
+    </div>
+
+    <script src="./js/swiper.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="/js/btn_active.js"></script>
+
+    <script>
+      // Связка сладеров
+      const images = document.querySelectorAll('.img_content img');
+      for (const [i, image] of Object.entries(images)) {
+        image.dataset.id = i;
+        image.addEventListener('click', () => {
+          localStorage.setItem('SLIDE_ID', image.dataset.id);
+          window.location.href = './path_starsSlider.html';
+          console.log(images);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.popo'); // Выбираем все кнопки с классом 'popo'
+
+        // Добавляем обработчик событий для каждой кнопки
+        buttons.forEach(function (button) {
+          button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const fadeOutElement = document.getElementById('fade-out-element');
+            fadeOutElement.classList.add('fade-out-animation');
+
+            const targetPage = button.getAttribute('href'); // Получаем значение атрибута 'href' кнопки
+            setTimeout(function () {
+              window.location.href = targetPage; // Переходим на страницу, указанную в 'href'
+            }, 500);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

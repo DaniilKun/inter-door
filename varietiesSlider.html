@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/sliderOpenSpace.css" />
+    <link rel="stylesheet" href="css/open_spaceSlider.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/video_archiv.css" />
+    <link rel="stylesheet" href="./css/galaxy.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container_descript">
+      <div class="title"><br />Галактика</div>
+      <div class="circle1"></div>
+      <div class="line"></div>
+      <div class="circle2"></div>
+      <div class="container_img_prev" id="fade-out-element">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/two/imgFullAndPrev/1.jpeg"
+                id="1"
+                style="width: 66%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Карликовая неправильная галактика.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/two/imgFullAndPrev/2.jpeg"
+                id="2"
+                style="width: 99%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Классификация галактик по Хабблу.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/two/imgFullAndPrev/3.jpeg"
+                id="3"
+                style="width: 66%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Крабовидная туманность.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/two/imgFullAndPrev/4.png"
+                id="4"
+                style="width: 88%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Местная группа галактик - схема.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/two/imgFullAndPrev/5.jpeg"
+                id="5"
+                style="width: 65%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Сверхмассивная черная дыра в галактике M87.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/two/imgFullAndPrev/6.jpeg"
+                id="6"
+                style="width: 99%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Эллиптическая галактика – М 87.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/two/imgFullAndPrev/7.jpeg"
+                id="7"
+                style="width: 56%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Линзовидная Галактика типа-S0.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/galaxy/two/imgFullAndPrev/8.jpeg"
+                id="8"
+                style="width: 87%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Спиральная галактика – M 101.</h2>
+            </div>
+          </div>
+        </div>
+        <div class="next"></div>
+        <div class="prev"></div>
+        <!-- <a href="./open_space.html" class="popo">
+          <button class="btnForBack">
+            <img src="./img/Musa_biography/Arrow.png" alt="" />
+            <h2>Назад</h2>
+          </button>
+        </a> -->
+      </div>
+    </div>
+
+    <div class="container_button">
+      <div class="btn__title">
+        <a class="popo" href="./galaxy.html"><button id="btn_title">Из чего состоит</button></a>
+        <a class="popo" href="./varieties.html"
+          ><button id="btn_title" class="active_btn">Разновидности</button></a
+        >
+        <a class="popo" href="./whatIs.html"
+          ><button id="btn_title">Что в них <br />происходит</button></a
+        >
+        <a class="popo" href="./milkyWay.html"><button id="btn_title">Млечный путь</button></a>
+      </div>
+      <a href="./varieties.html" class="popo">
+        <form action="./varieties.html">
+          <button class="back"></button></form
+      ></a>
+      <a href="./index.html" class="popo">
+        <img class="home" src="./img/home.png" alt="" />
+      </a>
+      <div class="fon_button">
+        <img src="img/planet_fon.png" alt="" />
+      </div>
+    </div>
+
+    <script src="./js/swiper.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="/js/btn_active.js"></script>
+
+    <script>
+      // Связка сладеров
+      const images = document.querySelectorAll('.img_content img');
+      for (const [i, image] of Object.entries(images)) {
+        image.dataset.id = i;
+        image.addEventListener('click', () => {
+          localStorage.setItem('SLIDE_ID', image.dataset.id);
+          window.location.href = './path_starsSlider.html';
+          console.log(images);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.popo'); // Выбираем все кнопки с классом 'popo'
+
+        // Добавляем обработчик событий для каждой кнопки
+        buttons.forEach(function (button) {
+          button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const fadeOutElement = document.getElementById('fade-out-element');
+            fadeOutElement.classList.add('fade-out-animation');
+
+            const targetPage = button.getAttribute('href'); // Получаем значение атрибута 'href' кнопки
+            setTimeout(function () {
+              window.location.href = targetPage; // Переходим на страницу, указанную в 'href'
+            }, 500);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

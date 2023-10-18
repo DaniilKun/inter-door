@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/swiper.css" />
+    <link rel="stylesheet" href="./css/sliderOpenSpace.css" />
+    <link rel="stylesheet" href="css/open_spaceSlider.css" />
+    <link rel="stylesheet" href="css/all.css" />
+    <link rel="stylesheet" href="css/video_archiv.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container_descript">
+      <div class="title">
+        Выход в открытый <br />
+        космос
+      </div>
+      <div class="circle1"></div>
+      <div class="line"></div>
+      <div class="circle2"></div>
+      <div class="container_img_prev" id="fade-out-element">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img
+                src="./img/open_space/three/full/1.jpeg"
+                id="1"
+                style="width: 45%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Муса Манаров в скафандре.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/open_space/three/full/2.jpeg"
+                id="2"
+                style="width: 99%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">Муса Манаров готовится к полету.</h2>
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./img/open_space/three/3.jpg"
+                id="3"
+                style="width: 99%; border-radius: 15px; border: 2px solid #fff"
+              />
+              <h2 class="txtImgSlide">М.Манаров готовится к полету.</h2>
+            </div>
+            <div class="swiper-slide">
+              <video
+                id="4"
+                controls
+                src="./img/open_space/three/vid1.mp4"
+                style="width: 97%; border-radius: 15px; border: 2px solid #fff"
+              ></video>
+              <h2 class="txtImgSlide">Сюжет Роскосмоса о Манарове (+выход в космос).</h2>
+            </div>
+          </div>
+        </div>
+        <div class="next"></div>
+        <div class="prev"></div>
+        <!-- <a href="./statistic.html" class="popo">
+          <button class="btnForBack ">
+            <img src="./img/Musa_biography/Arrow.png" alt="" />
+            <h2>Назад</h2>
+          </button>
+        </a> -->
+      </div>
+    </div>
+
+    <div class="container_button">
+      <div class="btn__title">
+        <a class="popo" href="./open_space.html"
+          ><button class="oneBtn " id="btn_title">Как это происходит</button></a
+        >
+        <a class="popo" href="./history_Musa.html"
+          ><button class="twoBtn" id="btn_title">История Мусы Манарова</button></a
+        >
+        <a class="popo" href="./statistic.html"
+          ><button class="threeBtn active_btn" id="btn_title">Статистика и достижения</button></a
+        >
+      </div>
+      <a href="./statistic.html" class="popo">
+      <form action="./statistic.html">
+        <button class="back"></button>
+      </form></a>
+      <a href="./index.html" class="popo">
+        <img class="home" src="./img/home.png" alt="" />
+      </a>
+      <div class="fon_button">
+        <img src="img/planet_fon.png" alt="" />
+      </div>
+    </div>
+
+    <script src="./js/swiper.js"></script>
+    <script src="./js/index.js"></script>
+    <script src="/js/btn_active.js"></script>
+
+    <script>
+      // Связка сладеров
+      const images = document.querySelectorAll('.img_content img');
+      for (const [i, image] of Object.entries(images)) {
+        image.dataset.id = i;
+        image.addEventListener('click', () => {
+          localStorage.setItem('SLIDE_ID', image.dataset.id);
+          window.location.href = './path_starsSlider.html';
+          console.log(images);
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.popo'); // Выбираем все кнопки с классом 'popo'
+
+        // Добавляем обработчик событий для каждой кнопки
+        buttons.forEach(function (button) {
+          button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const fadeOutElement = document.getElementById('fade-out-element');
+            fadeOutElement.classList.add('fade-out-animation');
+
+            const targetPage = button.getAttribute('href'); // Получаем значение атрибута 'href' кнопки
+            setTimeout(function () {
+              window.location.href = targetPage; // Переходим на страницу, указанную в 'href'
+            }, 500);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

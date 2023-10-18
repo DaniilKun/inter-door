@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="css/awards.css">
+
+    <title>Document</title>
+  </head>
+  <body id="fade-out-element">
+    <section class="animation_shadow">
+      <div class="container_descript">
+      <div class="container_img_manarov">
+        <div class="fon_toner">
+          <img src="./img/fon_toner.png" alt="" />
+        </div>
+        <div class="name">
+          <h1>
+            Муса <br />
+            Манаров
+          </h1>
+        </div>
+      </div>
+      <!-- Контент с описанием -->
+      <div class="descript_txt">
+        <div class="circle"></div>
+        <div class="line"></div>
+        <div>
+          <h2>
+            Лётчик-космонавт СССР, полковник запаса, Герой Советского Союза. Заслуженный мастер
+            спорта СССР.
+          </h2>
+        </div>
+        <div class="conteiner_biography" id="fade-out-element">
+          <div class="shadow">
+            <div class="portret">
+              <div class="portretImg"></div>
+              <div class="portretText"></div>
+            </div>
+            <div class="backImg">К наградам</div>
+          </div>
+          <div class="awards">
+            <div class="scroll"></div>
+
+            <div class="image-block">
+              <div class="img__awards" id="ord1"></div>
+              <p>
+                Герой Советского <br />
+                Союза
+              </p>
+            </div>
+            <div class="image-block">
+              <div class="img__awards" id="ord2"></div>
+              <p>Орден Ленина</p>
+            </div>
+            <div class="image-block">
+              <div class="img__awards" id="ord3"></div>
+              <p>
+                Орден Октябрьской <br />
+                революции
+              </p>
+            </div>
+
+            <div class="image-block">
+              <div class="img__awards" id="ord4"></div>
+              <p>
+                Медаль «За заслуги в <br />
+                освоении космоса»
+              </p>
+            </div>
+            <div class="image-block">
+              <div class="img__awards" id="ord5"></div>
+              <p>
+                Медаль Алексея <br />
+                Леонова
+              </p>
+            </div>
+            <div class="image-block">
+              <div class="img__awards" id="ord6"></div>
+              <p>
+                «Лётчик-космонавт <br />
+                СССР»
+              </p>
+            </div>
+
+            <div class="image-block">
+              <div class="img__awards" id="ord7"></div>
+              <p>
+                Орден Георгия <br />
+                Димитрова
+              </p>
+            </div>
+            <div class="image-block">
+              <div class="img__awards" id="ord8"></div>
+              <p>
+                Орден “Солнце <br />
+                свободы”
+              </p>
+            </div>
+            <div class="image-block">
+              <div class="img__awards" id="ord9"></div>
+              <p>
+                Офицер ордена <br />
+                Почётного легиона
+              </p>
+            </div>
+
+            <div class="image-block">
+              <div class="img__awards" id="ord10"></div>
+              <p>
+                Орден «Стара <br />
+                планина» I степени
+              </p>
+            </div>
+            <div class="image-block">
+              <div class="img__awards" id="ord11"></div>
+              <p>
+                Международный приз <br />
+                «Икар-1989»
+              </p>
+            </div>
+            <div class="image-block">
+              <div class="img__awards" id="ord12"></div>
+              <p>
+                Почётный диплом <br />
+                «Приз Хармона»
+              </p>
+            </div>
+
+            <div class="image-block">
+              <div class="img__awards" id="ord13"></div>
+              <p>
+                Почетный гражданин <br />
+                города Алатыря
+              </p>
+            </div>
+            <div class="image-block" style="margin-left: 40px">
+              <div class="img__awards" id="ord14"></div>
+              <p>
+                Орден «За заслуги <br />
+                перед Республикой <br />
+                Дагестан»
+              </p>
+            </div>
+            <div class="image-block" style="margin-left: 39px">
+              <div class="img__awards" id="ord15"></div>
+              <p>
+                Памятная медаль <br />
+                «100-летие <br />
+                образования <br />Чувашской автономной <br />
+                области»
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container_button">
+      <div class="btn__title">
+        <a class="popo" href="./biography.html"><button id="btn_title">Биография</button></a>
+        <a class="popo" href="./awards.html"
+          ><button id="btn_title" class="active_btn">Награды</button></a
+        >
+        <a class="popo" href="./video_archiv.html"><button id="btn_title">Видеоархив</button></a>
+        <a class="popo" href="./path_stars.html"><button id="btn_title">Путь к звёздам</button></a>
+      </div>
+      <a href="./index.html" class="popo">
+      <form action="./index.html">
+        <button class="back"></button>
+      </form></a>
+      <a href="./index.html" class="popo">
+        <img class="home" src="./img/home.png" alt="" />
+      </a>
+      <div id="video-container" class="fon_button">
+        <video id="video-background" autoplay loop muted>
+          <source src="./img/fon.mp4" type="video/mp4">
+
+        </video>
+      </div>
+    </div>
+    </section>
+    
+
+    <script src="/js/btn_active.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.popo'); // Выбираем все кнопки с классом 'popo'
+
+        // Добавляем обработчик событий для каждой кнопки
+        buttons.forEach(function (button) {
+          button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const fadeOutElement = document.getElementById('fade-out-element');
+            fadeOutElement.classList.add('fade-out-animation');
+
+            const targetPage = button.getAttribute('href'); // Получаем значение атрибута 'href' кнопки
+            setTimeout(function () {
+              window.location.href = targetPage; // Переходим на страницу, указанную в 'href'
+            }, 500);
+          });
+        });
+      });
+      const imageContainers = document.querySelectorAll('.image-container');
+    </script>
+    <script src="./js/popUpImgActive.js"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+
+.video {
+    display: flex;
+    /* justify-content: space-around; */
+    gap: 63px;
+    width: 871px;
+    flex-wrap: wrap;
+    height: 635px;
+}
+.img__awards {
+    width: 401px;
+    height: 231px;
+    border-radius: 23px;
+    border: 3px solid #FFF;
+    background: rgba(255, 255, 255, 0.56);
+}
+
+.video p {
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+/* .videoContainer{
+    height: 500px;
+} */
+#vid1 {
+ 
+}
+#vid4 {
+  
+}

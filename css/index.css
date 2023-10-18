@@ -1,0 +1,198 @@
+.section {
+  width: 2160px;
+  height: 3840px;
+  background: url(../img/mainPage.png);
+
+  /* display: flex;гибкий контейнер */
+  /* justify-content: center;выравнивание по горизонтали */
+  /* align-items: center;выравнивание по вертикали */
+  /* min-height: 100vh;на весь экран */
+}
+
+/* .stage {
+        border-bottom: 3px solid #444;
+        display: flex;
+        height: 330px;
+        width: 100%;
+    } */
+
+    /* Анимация поднимания и опускания космонавта */
+.box {
+  position: absolute;
+  /* left: 1100px; */
+  top: 200px;
+  align-self: flex-end;
+  animation-duration: 36s;
+  animation-iteration-count: infinite;
+  background: url(../img/kosmonavt.png);
+  height: 100vh;
+  width: 100vw;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin: 0 auto 0 auto;
+  transform-origin: bottom;
+}
+.bounce-1 {
+  animation-name: bounce-1;
+  animation-timing-function: linear;
+}
+@keyframes bounce-1 {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-600px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* Анимация вращения букв вокруг фото */
+.circle {
+  position: relative; /*относительное позиционирование*/
+  top: 1266px;
+  left: 340px;
+  width: 731px;
+  height: 730px;
+  border-radius: 50%; /*скругление углов*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 731px;
+  border: 7px solid #fff;
+  background: rgba(217, 217, 217, 0);
+}
+.logo {
+  position: absolute; /*абсолютное позиционирование*/
+  left: 15px;
+  top: -25px;
+  width: 755px;
+  height: 790px;
+  background: url(../img/ava.png); /*изображение*/
+  background-size: cover; /*картинка пропорционально растянута на весь блок*/
+  border-radius: 50%;
+}
+.text {
+  position: absolute;
+  width: 100%;
+  height: 147%;
+  animation: animate 80s linear infinite; /*свойства анимации*/
+}
+p span {
+  position: absolute;
+  left: 42%;
+  font-size: 150px;
+  color: #fff;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+  transform-origin: 60px 525px;
+}
+@keyframes animate {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Анимация  смены космонавта на аватарку */
+@keyframes myImgAnimation {
+  0% {
+    opacity: 0;
+  }
+/* 50%{
+  opacity: 1;
+} */
+  7.12% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 0;
+  }
+  /* 75.35% {
+    opacity: 1;
+  } */
+
+  /* 45.45% {
+    opacity: 0;
+  } */
+
+  100% {
+    opacity: 0;
+  }
+}
+
+/* .section {
+  position: relative;
+  width: 70%;
+} */
+
+.section article {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  animation-name: myImgAnimation;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+}
+
+.section article:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.section article:nth-child(2) {
+  animation-delay: 10s;
+}
+
+.textInfo{position: absolute;
+  top: 1197px;
+  left: 1480px;
+  width: 437px;
+height: 386px;
+color: #FFF;
+font-family: 'Jura';
+font-size: 35px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.btns{
+  position: absolute;
+  left: 1439px;top: 1569px;
+}
+.btn{
+display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 42px;
+}
+.toch{
+  width: 33px;
+height: 33px;
+    /* flex-shrink: 0; */
+    border: 3px solid white;
+    /* stroke-width: 5px; */
+    border-radius: 50%;
+stroke: #FFF;
+}
+.page{
+  width: 410px;
+  text-align: start;
+  background: none;
+color: #FFF;
+border: none;font-family: 'Jura';
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
