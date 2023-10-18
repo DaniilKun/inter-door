@@ -1,6 +1,4 @@
 # Taho-Gody_Inter_Door
-https://inter-door-gxrx.vercel.app/
-# Taho-Gody_Inter_Door
 Интерактивная дверь в музей Тахо-Годи Дагестан
 
 
