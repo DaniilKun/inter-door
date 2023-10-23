@@ -10,7 +10,8 @@
     <link rel="stylesheet" href="css/video_archiv.css" />
     <title>Document</title>
   </head>
-  <body>
+  <body id="fade-out-element" style="background-image: url(./img/OpenSpace_BG.jpg);">
+    <section class="animation_shadow">
     <div class="container_descript">
       <div class="title">
         Выход в открытый <br />
@@ -180,10 +181,14 @@
       <a href="./index.html" class="popo">
         <img class="home" src="./img/home.png" alt="" />
       </a>
-      <div class="fon_button">
-        <img src="img/planet_fon.png" alt="" />
+      <div  class="fon_button">
+        <video id="video-background" autoplay loop muted>
+          <source src="./img/videoFonPage2.mp4" type="video/mp4">
+
+        </video>
       </div>
     </div>
+</section>
 
     <script src="./js/swiper.js"></script>
     <script src="./js/index.js"></script>
