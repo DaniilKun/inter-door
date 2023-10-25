@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/awards.css">
 
     <title>Document</title>
+    <audio id="audio" src="./img/ui_click.mp3"></audio>
   </head>
   <body id="fade-out-element">
     <section class="animation_shadow">
@@ -185,27 +186,39 @@
     </section>
     
 
+    <script src="./soundLink.js"></script>
+    <script src="./js/popUpImgActive.js"></script>
+
     <script src="/js/btn_active.js"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        const buttons = document.querySelectorAll('.popo'); // Выбираем все кнопки с классом 'popo'
+        const buttons = document.querySelectorAll('.popo');
+        const audio = document.getElementById('audio');
 
-        // Добавляем обработчик событий для каждой кнопки
         buttons.forEach(function (button) {
           button.addEventListener('click', function (event) {
             event.preventDefault();
-            const fadeOutElement = document.getElementById('fade-out-element');
-            fadeOutElement.classList.add('fade-out-animation');
 
-            const targetPage = button.getAttribute('href'); // Получаем значение атрибута 'href' кнопки
-            setTimeout(function () {
-              window.location.href = targetPage; // Переходим на страницу, указанную в 'href'
-            }, 500);
+            // Воспроизведение звука
+            audio
+              .play()
+              .then(() => {
+                // После воспроизведения звука, выполняется переход на новую страницу
+                const fadeOutElement = document.getElementById('fade-out-element');
+                fadeOutElement.classList.add('fade-out-animation');
+
+                const targetPage = button.getAttribute('href');
+                setTimeout(function () {
+                  window.location.href = targetPage;
+                }, 500);
+              })
+              .catch((error) => {
+                console.error('Error playing audio:', error);
+              });
           });
         });
       });
       const imageContainers = document.querySelectorAll('.image-container');
     </script>
-    <script src="./js/popUpImgActive.js"></script>
   </body>
 </html>

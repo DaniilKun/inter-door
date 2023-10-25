@@ -1,35 +1,46 @@
-const images = document.querySelectorAll('.img__awards');
-const shadow = document.querySelector('.shadow');
-const exit = document.querySelector('.backImg');
-const portret = document.querySelector('.portret');
 
-images.forEach((image) => {
-  image.addEventListener('click', () => {
-    shadow.style.display = 'flex';
+  const images = document.querySelectorAll('.img__awards');
+  const shadow = document.querySelector('.shadow');
+  const exit = document.querySelector('.backImg');
+  const portretImg = document.querySelector(".portretImg");
+  const portretText = document.querySelector('.portretText');
+
+  // Инициализируем звуковой объект с использованием Howler.js для открытия
+  const openSound = new Howl({
+    src: ['../img/ui_click.mp3']
   });
-});
 
-exit.addEventListener('click', () => {
-  shadow.style.display = 'none';
-});
-
-
-const imageBlocks = document.querySelectorAll(".image-block");
-
-// Находим элемент, в который нужно вставить картинку
-const portretImg = document.querySelector(".portretImg");
-
-// Добавляем обработчик события клика на каждый элемент с классом "image-block"
-imageBlocks.forEach(function(imageBlock) {
-  imageBlock.addEventListener("click", function() {
-    // Загружаем фоновое изображение текущего блока "image-block"
-    var backgroundImageUrl = window.getComputedStyle(imageBlock.querySelector(".img__awards")).backgroundImage;
-     // Получаем текст из элемента <p> текущего блока "image-block"
-    var text = imageBlock.querySelector("p").textContent;
-    // Устанавливаем это изображение в фон блока portretImg
-    portretImg.style.backgroundImage = backgroundImageUrl;
-    portretText.textContent = text;
+  // Инициализируем звуковой объект с использованием Howler.js для закрытия
+  const closeSound = new Howl({
+    src: ['../img/ui_click.mp3']
   });
-});
 
-const portretText = document.querySelector('.portretText')
+  images.forEach((image) => {
+    image.addEventListener('click', () => {
+      // Воспроизводим звук при открытии
+      openSound.play();
+
+      // Показываем теневой блок
+      shadow.style.display = 'flex';
+    });
+  });
+
+  exit.addEventListener('click', () => {
+    // Воспроизводим звук при закрытии
+    closeSound.play();
+
+    // Скрываем теневой блок
+    shadow.style.display = 'none';
+  });
+
+  const imageBlocks = document.querySelectorAll(".image-block");
+
+  imageBlocks.forEach(function(imageBlock) {
+    imageBlock.addEventListener("click", function() {
+      var backgroundImageUrl = window.getComputedStyle(imageBlock.querySelector(".img__awards")).backgroundImage;
+      var text = imageBlock.querySelector("p").textContent;
+      portretImg.style.backgroundImage = backgroundImageUrl;
+      portretText.textContent = text;
+    });
+  });
+

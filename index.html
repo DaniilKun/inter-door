@@ -6,6 +6,8 @@
     <link rel="stylesheet" href="./css/index.css" />
     <link rel="stylesheet" href="./css/all.css" />
     <title>Document</title>
+    <audio id="audio" src="./img/ui_click.mp3"></audio>
+
   </head>
   <body>
     <div class="section">
@@ -24,32 +26,32 @@
     <div class="textInfo" >
       коснитесь названия раздела, чтобы узнать больше и выйти в открытый космос вместе с лётчиком-космонавтом Мусой Манаровым
     </div>
-    <div class="btns">
+    <div class="btns" >
       <form action="./biography.html" >
-        <div class="btn">
+        <div class="btn ">
         <div class="toch"></div>
-        <button class=" page">Муса Манаров - гордость Дагестана</button>
+        <button class="sound page">Муса Манаров - гордость Дагестана</button>
       </div>
       </form>
       <form action="./open_space.html">
         <div class="btn">
         <div class="toch"></div>
-        <button class=" page">Выход в открытый космос</button>
+        <button class="sound page">Выход в открытый космос</button>
       </div>
       </form>
       <form action="./galaxy.html">
         <div class="btn">
         <div class="toch"></div>
-        <button class=" page">Галактика</button>
+        <button class="sound page">Галактика</button>
       </div>
       </form>
       <form action="./spaceHistory/time1.html">
         <div class="btn">
         <div class="toch"></div>
-        <button class=" page">История космонавтики</button>
+        <button class="sound page">История космонавтики</button>
       </div>
       </form>
-      
+
     </div>
     <!-- <video id="myVideo" src="./img/door1_transition.webm" muted></video> -->
     <!-- <iframe id="myIframe" style="position: absolute;
@@ -58,7 +60,9 @@
     height: 100%;
     width: 100%;
     z-index: -1;" src="biography.html" frameborder="0"></iframe> -->
-    <script src="app.js"></script>
+    <script src="./app.js"></script>
+    <script src="./soundLink.js"></script>
+    <script src="./soundClick.js"></script>
     <script>
       const text = document.querySelector(".text p");
       text.innerHTML = text.innerText

@@ -242,7 +242,7 @@ line-height: normal;
   position: relative;
   z-index: 220;
   display: flex;
-  gap: 71px;
+  gap: 52px;
   justify-content: center;
 }
 .btn__title button {
@@ -266,7 +266,7 @@ line-height: normal;
 .back {
   margin-top: 79px;
   float: left;
-  margin-left: 106px;
+  margin-left: 101px;
   width: 117px;
   height: 117px;
   border-radius: 26px;
