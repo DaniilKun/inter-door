@@ -10,10 +10,7 @@
     src: ['../img/ui_click.mp3']
   });
 
-  // Инициализируем звуковой объект с использованием Howler.js для закрытия
-  const closeSound = new Howl({
-    src: ['../img/ui_click.mp3']
-  });
+  
 
   images.forEach((image) => {
     image.addEventListener('click', () => {
@@ -26,9 +23,7 @@
   });
 
   exit.addEventListener('click', () => {
-    // Воспроизводим звук при закрытии
-    closeSound.play();
-
+   
     // Скрываем теневой блок
     shadow.style.display = 'none';
   });

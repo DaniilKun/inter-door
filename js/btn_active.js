@@ -1,3 +1,34 @@
+var inactivityTime = 420; // 7 минуты в секундах
+  var redirectUrl = '/index.html'; // абсолютный путь к index.html
+
+  var timeout;
+
+  function resetTimer() {
+    clearTimeout(timeout);
+    timeout = setTimeout(redirect, inactivityTime * 1000);
+  }
+
+  function redirect() {
+    // Проверяем, не находимся ли мы уже на странице index.html
+    if (window.location.pathname !== redirectUrl) {
+      // Если нет, перенаправляем пользователя на абсолютный путь к index.html
+      window.location.href = redirectUrl;
+    }
+  }
+
+  // Сбрасываем таймер при каждом действии пользователя
+  document.addEventListener('mousemove', resetTimer);
+  document.addEventListener('keypress', resetTimer);
+  document.addEventListener('scroll', resetTimer); // Добавили обработчик события скролла
+  document.addEventListener('touchstart', resetTimer); // Обработка начала касания
+  document.addEventListener('touchmove', resetTimer);  // Обработка движения пальцев по экрану
+
+
+  // Запускаем таймер при загрузке страницы
+  resetTimer();
+
+
+
 const active_btns = document.querySelectorAll("#btn_title");
 
 for (const btn of active_btns) {
