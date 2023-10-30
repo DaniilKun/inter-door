@@ -101,7 +101,7 @@ flex-direction: column;
   height: 86px;
   border-radius: 26px;
   border: 2px solid #fff;
-  background: rgba(217, 217, 217, 0);
+  background: rgba(255, 255, 255, 0.56);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,8 +113,8 @@ flex-direction: column;
   line-height: normal;
 }
 .portretImg{
-    width: 477px;
-height: 493px;
+    width: 507px;
+height: 507px;
 border-radius: 42px;
 /* background-color: aqua; */
 background-repeat: no-repeat;
